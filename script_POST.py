@@ -8,5 +8,5 @@ Personas = {
 url = "http://httpbin.org/post"
 response = requests.post(url, data=json.dumps(Personas))
 
-print(response.content)
+print(response.json())
 
