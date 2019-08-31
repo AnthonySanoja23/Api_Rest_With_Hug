@@ -1,4 +1,12 @@
 import requests
+import json 
+Personas = {
+    "nombre": "Anthony",
+    "apellido": "Sanoja"
+}
 
-r = requests.get("http://httpbin.org/post")
-json= r.json()
+url = "http://httpbin.org/post"
+response = requests.post(url, data=json.dumps(Personas))
+
+print(response.content)
+
