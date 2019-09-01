@@ -18,12 +18,13 @@ Personas=[
          ]
 
 
+@hug.get('/Personas')
+def Mostrar_Personas():
+    return Personas
 
 @hug.get('/Personas/{event}')
 def Todas_las_personas(event: int):
-    if event == null:
-        return Personas
-    elif event == 0:
+    if event == 0:
         return Personas[0]    
     elif event == 1:
         return Personas[1]
