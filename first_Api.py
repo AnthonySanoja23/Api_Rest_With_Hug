@@ -18,11 +18,16 @@ Personas=[
          ]
 
 @hug.get('/Personas')
-def Personas():
-    return Personas
+
+def Todas_Las_Personas(data):
+    if int(data) == 1:
+        return Personas[0]
+    else:
+        return 456 
+    
 
 @hug.get('/Personas1')
-def First_Persona(''):
+def First_Persona():
     return Personas[0]
 
 @hug.get('/Persona2')
