@@ -17,9 +17,20 @@ Personas=[
 
          ]
 
-
-@hug.get()
-
-def Get():
+@hug.get('/Personas')
     return Personas
+
+
+def First_Persona():
+    return Personas[0]
+
+@hug.get('/Persona2')
+
+def First_Persona():
+    return Personas[1]
+
+@hug.get('/Persona3')
+
+def First_Persona():
+    return Personas[2]
     
