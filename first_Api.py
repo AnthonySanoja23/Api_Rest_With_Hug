@@ -26,7 +26,7 @@ def Todas_las_personas(event: int):
     elif event == 1:
         return Personas[1]
     elif event == 2:
-        return Personas[3]    
+        return Personas[2]    
     
 
 
