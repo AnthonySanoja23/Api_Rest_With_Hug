@@ -17,17 +17,16 @@ Personas=[
 
          ]
 
-@hug.get('/Personas')
 
-def Todas_Las_Personas(num):
-    if int(num) == 0:
+
+@hug.get('/Personas/{event}')
+def Todas_las_personas(event: int):
+    if event == 0:
         return Personas[0]
-    elif int(num) == 1:
+    elif event == 1:
         return Personas[1]
-    elif int(num) == 2:
-        return Personas[2]
-            
-         
+    elif event == 2:
+        return Personas[3]    
     
 
 
