@@ -19,24 +19,16 @@ Personas=[
 
 @hug.get('/Personas')
 
-def Todas_Las_Personas(data):
-    if int(data) == 1:
+def Todas_Las_Personas(num):
+    if int(num) == 0:
         return Personas[0]
-    else:
-        return 456 
+    elif int(num) == 1:
+        return Personas[1]
+    elif int(num) == 2:
+        return Personas[2]
+            
+         
     
 
-@hug.get('/Personas1')
-def First_Persona():
-    return Personas[0]
 
-@hug.get('/Persona2')
-
-def Segunda_Persona():
-    return Personas[1]
-
-@hug.get('/Persona3')
-
-def Tercera_Persona():
-    return Personas[2]
     
