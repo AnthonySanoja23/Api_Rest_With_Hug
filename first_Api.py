@@ -18,6 +18,15 @@ Personas=[
          ]
 
 
+@hug.post()
+def Agregar_Persona(n,a,e):
+    Personas.append({'Nombre':n,'Apellido':a,'Edad':e})
+
+
+    return Personas        
+
+
+
 @hug.get('/Personas')
 def Mostrar_Personas():
     return Personas
