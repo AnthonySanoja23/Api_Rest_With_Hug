@@ -1,21 +1,51 @@
 import hug 
 
+import json
+
+from pathlib import Path
+
+my_file = Path("Personas.json")
+
+Personas = []
 
 
-Personas=[
-         {'Nombre':'Anthony',
-         'Apellido':'Sanoja',
-         'Edad':'23'},
+if my_file.exists():
 
-         {'Nombre':'Alejandro',
-         'Apellido':'Ortegano',
-         'Edad':'26'},
+	archivo = open("Personas.json", "r")
+	datos = archivo.read()
+	archivo.close()
+	clientes = json.loads(datos)	
 
-         {'Nombre':'Cesar',
-         'Apellido':'Rivas',
-         'Edad':'24'},
+else:
 
-         ]
+	print("No hay data cargada debido a que el archivo no existe ")
+	input("Presione una tecla para continuar")
+
+
+def guardar_en_json():
+
+	datos = json.dumps(clientes)
+	f = open('Personas.json','w')
+	f.write(datos)
+	f.close()
+
+
+
+
+
+@hug.put()
+def actualizar_Persona(Persona_id,actr_Persona):
+		global Personas
+
+		if len(Personas) - 1 >= Persona_id:
+				Personas[Persona_id] = actr_Persona
+
+				guardar_en_json()
+
+		else:
+			 print('La persona  no esta registrado en la lista ')
+
+
 
 
 @hug.post()
