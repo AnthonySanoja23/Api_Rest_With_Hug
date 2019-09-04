@@ -30,8 +30,16 @@ def guardar_en_json():
 	f.close()
 
 
+@hug.delete()
+def borrar_Personas(Persona_id):
+		global Personas
 
-   
+		for idx, Persona in enumerate(Personas):
+				if idx == Persona_id:
+						del Personas[idx]
+						guardar_en_json() 
+						break
+		
 
 
 @hug.put()
