@@ -31,7 +31,7 @@ def guardar_en_json():
 
 
 @hug.delete()
-def borrar_Personas(Persona_id):
+def borrar_Personas(Persona_id:int):
 		global Personas
 
 		for idx, Persona in enumerate(Personas):
@@ -39,7 +39,7 @@ def borrar_Personas(Persona_id):
 						del Personas[idx]
 						guardar_en_json() 
 						break
-		
+		return Personas
 
 
 @hug.put()
