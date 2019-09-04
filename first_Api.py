@@ -50,8 +50,9 @@ def actualizar_Persona(Persona_id,actr_Persona):
 
 @hug.post()
 def Agregar_Persona(n,a,e):
+    global Personas
     Personas.append({'Nombre':n,'Apellido':a,'Edad':e})
-
+    guardar_en_json()
 
     return Personas        
 
@@ -59,10 +60,13 @@ def Agregar_Persona(n,a,e):
 
 @hug.get('/Personas')
 def Mostrar_Personas():
+    global Personas
     return Personas
 
 @hug.get('/Personas/{event}')
+
 def Todas_las_personas(event: int):
+    global Personas
     if event == 0:
         return Personas[0]    
     elif event == 1:
