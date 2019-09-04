@@ -31,22 +31,24 @@ def guardar_en_json():
 
 
 
+   
 
 
 @hug.put()
-def actualizar_Persona(Persona_id,actr_Persona):
+
+def actualizar_Personas(Persona_id:int,n,a,e):
 		global Personas
 
 		if len(Personas) - 1 >= Persona_id:
-				Personas[Persona_id] = actr_Persona
+				Personas[Persona_id] = {'Nombre':n,'Apellido':a,'Edad':e}
 
 				guardar_en_json()
+        
 
 		else:
-			 print('La persona  no esta registrado en la lista ')
+			 print('La persona no esta registrado en la lista ')
 
-
-
+		return Personas       
 
 @hug.post()
 def Agregar_Persona(n,a,e):
