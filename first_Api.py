@@ -14,7 +14,7 @@ if my_file.exists():
 	archivo = open("Personas.json", "r")
 	datos = archivo.read()
 	archivo.close()
-	clientes = json.loads(datos)	
+	Personas = json.loads(datos)	
 
 else:
 
@@ -24,7 +24,7 @@ else:
 
 def guardar_en_json():
 
-	datos = json.dumps(clientes)
+	datos = json.dumps(Personas)
 	f = open('Personas.json','w')
 	f.write(datos)
 	f.close()
