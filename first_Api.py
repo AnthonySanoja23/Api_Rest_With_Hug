@@ -77,10 +77,10 @@ def buscar_cliente(Person_name):
 					return Person['Name'],Person['Last_Name'],Person['Age']
   
 
-# Autenticacion por http     
-@hug.get("/Auntenticacion", requires=autenticacion)
-def basic_auth_api_call(usuario: hug.directives.user):
-    return "Bienvenido: {0}".format(usuario)
+# Authentication por http     
+@hug.get("/authentication", requires=authentication)
+def basic_auth_api_call(user: hug.directives.user):
+    return "Welcome: {0}".format(user)
 
 
 
