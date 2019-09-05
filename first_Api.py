@@ -39,18 +39,16 @@ def delete_people(Person_id:int):
 
 
 @hug.put()
-
 def update_people(Person_id:int,n,l,a):
-		global people
+	global people
 
-		if len(people) - 1 >= Person_id:
-				people[Person_id] = {'Name':n,'Last_Name':l,'Age':a}
+	if len(people) - 1 >= Person_id:
 
-				save_in_json()
+		people[Person_id] = {'Name':n,'Last_Name':l,'Age':a}
+
+			save_in_json()
         
-	
-
-		return people       
+	return people       
 
 @hug.post()
 def Agregar_Persona(n,a,e):
