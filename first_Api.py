@@ -40,7 +40,7 @@ def delete_people(Person_id:int):
 
 @hug.put()
 
-def actualizar_people(Person_id:int,n,l,a):
+def update_people(Person_id:int,n,l,a):
 		global people
 
 		if len(people) - 1 >= Person_id:
