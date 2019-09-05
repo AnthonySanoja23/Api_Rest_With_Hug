@@ -66,17 +66,17 @@ def get_people():
 
 @hug.get('/people/{event}')
 
-def buscar_cliente(Person_name):
+def find_person(Person_name):
 
 	for Person in people:
 
-			if Person['Name'] != Person_name:
-					continue
-			else:
-					return Person['Name'],Person['Last_Name'],Person['Age']
+		if Person['Name'] != Person_name:
+			continue
+		else:
+			return Person['Name'],Person['Last_Name'],Person['Age']
   
 
-# Authentication por http     
+# Authentication http     
 @hug.get("/authentication", requires=authentication)
 def basic_auth_api_call(user: hug.directives.user):
     return "Welcome: {0}".format(user)
