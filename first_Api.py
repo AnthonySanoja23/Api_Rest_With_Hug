@@ -46,7 +46,7 @@ def actualizar_people(Person_id:int,n,l,a):
 		if len(people) - 1 >= Person_id:
 				people[Person_id] = {'Name':n,'Last_Name':l,'Age':a}
 
-				guardar_en_json()
+				save_in_json()
         
 	
 
