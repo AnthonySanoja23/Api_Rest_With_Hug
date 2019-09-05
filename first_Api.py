@@ -28,14 +28,14 @@ def save_in_json():
 
 @hug.delete()
 def delete_people(Person_id:int):
-		global people
+	global people
 
-		for idx, Person in enumerate(people):
-				if idx == Person_id:
-						del people[idx]
-						save_in_json() 
-						break
-		return people
+	for idx, Person in enumerate(people):
+		if idx == Person_id:
+			del people[idx]
+			save_in_json() 
+			break
+	return people
 
 
 @hug.put()
