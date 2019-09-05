@@ -13,31 +13,29 @@ autenticacion = hug.authentication.basic(hug.authentication.verify("Anthony", "1
 if my_file.exists():
 
 	archive = open("People.json", "r")
-	datos = archive.read()
+	data = archive.read()
 	archive.close()
-	Personas = json.loads(datos)	
+	People = json.loads(data)	
 
 
+def save_in_json():
 
-
-def guardar_en_json():
-
-	datos = json.dumps(People)
+	data = json.dumps(People)
 	f = open('People.json','w')
-	f.write(datos)
+	f.write(data)
 	f.close()
 
 
 @hug.delete()
-def borrar_Personas(Persona_id:int):
-		global Personas
+def delete_people(Persona_id:int):
+		global people
 
-		for idx, Persona in enumerate(Personas):
+		for idx, Persona in enumerate(people):
 				if idx == Persona_id:
-						del Personas[idx]
+						del people[idx]
 						guardar_en_json() 
 						break
-		return Personas
+		return people
 
 
 @hug.put()
