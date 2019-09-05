@@ -65,16 +65,17 @@ def get_people():
     global people
     return people
 
-@hug.get('/Personas/{event}')
+@hug.get('/people/{event}')
 
-def Todas_las_personas(event: int):
-    global Personas
-    if event == 0:
-        return Personas[0]    
-    elif event == 1:
-        return Personas[1]
-    elif event == 2:
-        return Personas[2]    
+def buscar_cliente(Person_name):
+
+	for Person in people:
+
+			if Person['Name'] != Person_name:
+					continue
+			else:
+					return Person['Name'],Person['Last_Name'],Person['Age']
+  
 
 # Autenticacion por http     
 @hug.get("/Auntenticacion", requires=autenticacion)
