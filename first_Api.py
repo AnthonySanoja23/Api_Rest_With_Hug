@@ -15,18 +15,18 @@ if my_file.exists():
 	file = open("People.json", "r")
 	data = file.read()
 	file.close()
-	People = json.loads(data)	
+	people = json.loads(data)	
 
 
 def save_in_json():
 
-	data = json.dumps(People)
+	data = json.dumps(people)
 	f = open('People.json','w')
 	f.write(data)
 	f.close()
 
 
-@hug.delete()
+@hug.delete('/delete/{Person_id}')
 def delete_people(Person_id:int):
 	global people
 
@@ -35,10 +35,11 @@ def delete_people(Person_id:int):
 			del people[idx]
 			save_in_json() 
 			break
+
 	return people
 
 
-@hug.put()
+@hug.put('/update/{Person_id}/{n}/{l}/{a}')
 def update_people(Person_id:int,n,l,a):
 	global people
 
@@ -49,8 +50,8 @@ def update_people(Person_id:int,n,l,a):
 			       
 	return people       
 
-@hug.post()
-def add_person(n,l,a):
+@hug.post('/add/{n}/{l}/{a}')
+def add_person(n:str,l:str,a:str):
     global people
     people.append({'Name':n,'Last_Name':l,'Age':a})
     save_in_json()
@@ -64,16 +65,15 @@ def get_people():
     global people
     return people
 
-@hug.get('/people/{event}')
+@hug.get('/people/{Person_id}')
 
-def find_person(Person_name):
+def find_person(Person_id:int):
 
-	for Person in people:
-
-		if Person['Name'] != Person_name:
-			continue
-		else:
-			return Person['Name'],Person['Last_Name'],Person['Age']
+	for idx, Person in enumerate(people):
+		if idx == Person_id:
+			return Person
+			 
+			break
   
 
 # Authentication http     
