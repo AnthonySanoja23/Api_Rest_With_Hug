@@ -16,10 +16,7 @@ if my_file.exists():
 	archivo.close()
 	Personas = json.loads(datos)	
 
-else:
 
-	print("No hay data cargada debido a que el archivo no existe ")
-	input("Presione una tecla para continuar")
 
 
 def guardar_en_json():
@@ -52,9 +49,7 @@ def actualizar_Personas(Persona_id:int,n,a,e):
 
 				guardar_en_json()
         
-
-		else:
-			 print('La persona no esta registrado en la lista ')
+	
 
 		return Personas       
 
