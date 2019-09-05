@@ -43,8 +43,8 @@ def delete_people(Person_id:int):
 def actualizar_people(Person_id:int,n,l,a):
 		global people
 
-		if len(people) - 1 >= Persona_id:
-				people[Persona_id] = {'Nombre':n,'Apellido':a,'Edad':e}
+		if len(people) - 1 >= Person_id:
+				people[Person_id] = {'Name':n,'Last_Name':l,'Age':a}
 
 				guardar_en_json()
         
