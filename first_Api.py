@@ -4,15 +4,15 @@ import json
 
 from pathlib import Path
 
-my_file = Path("Personas.json")
+my_file = Path("People.json")
 
-Personas = []
+People = []
 
 autenticacion = hug.authentication.basic(hug.authentication.verify("Anthony", "1234"))
 
 if my_file.exists():
 
-	archivo = open("Personas.json", "r")
+	archivo = open("People.json", "r")
 	datos = archivo.read()
 	archivo.close()
 	Personas = json.loads(datos)	
@@ -22,8 +22,8 @@ if my_file.exists():
 
 def guardar_en_json():
 
-	datos = json.dumps(Personas)
-	f = open('Personas.json','w')
+	datos = json.dumps(People)
+	f = open('People.json','w')
 	f.write(datos)
 	f.close()
 
@@ -79,7 +79,8 @@ def Todas_las_personas(event: int):
         return Personas[1]
     elif event == 2:
         return Personas[2]    
-    
+
+# Autenticacion por http     
 @hug.get("/Auntenticacion", requires=autenticacion)
 def basic_auth_api_call(usuario: hug.directives.user):
     return "Bienvenido: {0}".format(usuario)
