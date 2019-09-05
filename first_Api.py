@@ -8,6 +8,7 @@ my_file = Path("Personas.json")
 
 Personas = []
 
+autenticacion = hug.authentication.basic(hug.authentication.verify("Anthony", "1234"))
 
 if my_file.exists():
 
@@ -79,6 +80,13 @@ def Todas_las_personas(event: int):
     elif event == 2:
         return Personas[2]    
     
+@hug.get("/Auntenticacion", requires=autenticacion)
+def basic_auth_api_call(usuario: hug.directives.user):
+    return "Bienvenido: {0}".format(usuario)
+
+
+
+
 
 
     
