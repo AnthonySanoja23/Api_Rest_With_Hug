@@ -53,7 +53,7 @@ def update_people(Person_id:int,n,l,a):
 @hug.post()
 def add_person(n,l,a):
     global people
-    people.append({'Nombre':n,'Apellido':a,'Edad':e})
+    people.append({'Name':n,'Last_Name':l,'Age':a})
     guardar_en_json()
 
     return people        
