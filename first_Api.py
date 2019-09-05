@@ -30,10 +30,10 @@ def save_in_json():
 def delete_people(Person_id:int):
 		global people
 
-		for idx, Persona in enumerate(people):
+		for idx, Person in enumerate(people):
 				if idx == Person_id:
 						del people[idx]
-						guardar_en_json() 
+						save_in_json() 
 						break
 		return people
 
