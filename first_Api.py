@@ -54,16 +54,16 @@ def update_people(Person_id:int,n,l,a):
 def add_person(n,l,a):
     global people
     people.append({'Name':n,'Last_Name':l,'Age':a})
-    guardar_en_json()
+    save_in_json()
 
     return people        
 
 
 
-@hug.get('/Personas')
-def Mostrar_Personas():
-    global Personas
-    return Personas
+@hug.get('/people')
+def get_people():
+    global people
+    return people
 
 @hug.get('/Personas/{event}')
 
