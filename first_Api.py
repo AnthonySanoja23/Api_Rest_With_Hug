@@ -27,11 +27,11 @@ def save_in_json():
 
 
 @hug.delete()
-def delete_people(Persona_id:int):
+def delete_people(Person_id:int):
 		global people
 
 		for idx, Persona in enumerate(people):
-				if idx == Persona_id:
+				if idx == Person_id:
 						del people[idx]
 						guardar_en_json() 
 						break
