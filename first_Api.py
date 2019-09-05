@@ -8,7 +8,7 @@ my_file = Path("People.json")
 
 people = []
 
-autenticacion = hug.authentication.basic(hug.authentication.verify("Anthony", "1234"))
+authentication = hug.authentication.basic(hug.authentication.verify("Anthony", "1234"))
 
 if my_file.exists():
 
