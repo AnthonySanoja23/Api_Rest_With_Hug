@@ -12,9 +12,9 @@ autenticacion = hug.authentication.basic(hug.authentication.verify("Anthony", "1
 
 if my_file.exists():
 
-	archivo = open("People.json", "r")
-	datos = archivo.read()
-	archivo.close()
+	archive = open("People.json", "r")
+	datos = archive.read()
+	archive.close()
 	Personas = json.loads(datos)	
 
 
