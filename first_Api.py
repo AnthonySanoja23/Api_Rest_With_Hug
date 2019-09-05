@@ -6,15 +6,15 @@ from pathlib import Path
 
 my_file = Path("People.json")
 
-People = []
+people = []
 
 autenticacion = hug.authentication.basic(hug.authentication.verify("Anthony", "1234"))
 
 if my_file.exists():
 
-	archive = open("People.json", "r")
-	data = archive.read()
-	archive.close()
+	file = open("People.json", "r")
+	data = file.read()
+	file.close()
 	People = json.loads(data)	
 
 
