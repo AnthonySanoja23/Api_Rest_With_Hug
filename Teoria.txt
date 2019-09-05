@@ -24,7 +24,9 @@ Redireccion de Salida
 
  Que es Rest ?
 
-REST es un acrónimo de Representational State Transfer o transferencia de estado representacional, le agrega una capa muy delgada de complejidad y abstracción a HTTP. Mientras que HTTP es transferencia de archivos, REST se basa en la transferencia de recursos.
+REST es un acrónimo de Representational State Transfer o transferencia de estado representacional,
+le agrega una capa muy delgada de complejidad y abstracción a HTTP. Mientras que HTTP es transferencia de archivos,
+REST se basa en la transferencia de recursos.
 
 Una API RESTful es una API diseñada con los conceptos de REST:
 
