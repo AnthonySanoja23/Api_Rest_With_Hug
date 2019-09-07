@@ -33,32 +33,32 @@ _We will install python 3 and Hug in a virtual environment_
 sudo pip3 install virtualenv
 ```
 
-#####Creation of virtual environment with python 
+##### Creation of virtual environment with python 
 
 ```
 virtualenv env --python=python3
 
 ```
-#####Creation of virtual environment with python 
+##### Creation of virtual environment with python 
 
 ```
 virtualenv env --python=python3
 
 ```
-#####Activation of the virtual environment
+##### Activation of the virtual environment
 Once the above command is executed, a folder called env will be created and we will do the following steps:
 ```
 $ cd env
 $ source bin/activate
 
 ```
-#####The terminal prompt indicates that the virtual environment  is enabled
+##### The terminal prompt indicates that the virtual environment  is enabled
 
 ```
 (env)$
 
 ```
-#####Hug installation in the virtual environment
+##### Hug installation in the virtual environment
 ```
 pip3 install hug --upgrade
 
