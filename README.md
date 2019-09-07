@@ -19,6 +19,7 @@ _These instructions will allow you to get a working copy of the project on your 
 _You need to install in a virtual environment the following_
 
 ```
+Ubuntu 18.04 
 Python3.3+
 Hug (2.6.0)
 ```
