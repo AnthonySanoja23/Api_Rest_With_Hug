@@ -70,5 +70,5 @@ pip3 install hug --upgrade
 To run, from the command line type:
 
 ```bash
-hug -f main.py
+hug -f first_Api.py.py
 ```
