@@ -9,7 +9,7 @@ _The purpose of this repository is to provide an api Rest that has the function 
 1. Delete
 
 
-## Comenzando 🚀
+## Starting 🚀
 
 _These instructions will allow you to get a working copy of the project on your local machine for development and testing purposes._
 
