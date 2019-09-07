@@ -1,4 +1,4 @@
-# Api REST with Hug :tw-1f40d: :tw-1f428:
+# Api REST with Hug :snake: :koala:
 _Hug is an API development framework implemented in Python 3. It is a micro-framework (minimalistic web application framework), which means that it contains as little code and integrations as possible to make it fully functional, which in turn provides greater performance, as in its own website indicates we can summarize Hug in 4 words “Obvious. Clean. Radically simple”._
 
 _The purpose of this repository is to provide an api Rest that has the function of executing requests of http verbs as they are:_
