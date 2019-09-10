@@ -1,14 +1,14 @@
 import hug 
-
 import json
-
 from pathlib import Path
+
+
 
 my_file = Path("People.json")
 
 people = []
 
-authentication = hug.authentication.basic(hug.authentication.verify("Anthony", "1234"))
+
 
 if my_file.exists():
 
