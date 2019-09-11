@@ -24,6 +24,9 @@ if my_file.exists():
 	people = json.loads(data)	
 
 
+
+
+
 def save_in_json():
 
 	data = json.dumps(people)
@@ -32,6 +35,9 @@ def save_in_json():
 	f.close()
 
 
+
+
+@hug.default_input_format("application/json")
 @hug.delete('/delete/{Person_id}')
 def delete_people(Person_id:int):
 	global people
@@ -41,10 +47,13 @@ def delete_people(Person_id:int):
 			del people[idx]
 			save_in_json() 
 			break
+ 
+	return (hug.input_format.json(people)
 
-	return people
 
 
+
+@hug.default_input_format("application/json")
 @hug.put('/update/{Person_id}/{n}/{l}/{a}')
 def update_people(Person_id:int,n,l,a):
 	global people
@@ -54,15 +63,18 @@ def update_people(Person_id:int,n,l,a):
 		people[Person_id] = {'Name':n,'Last_Name':l,'Age':a}
 		save_in_json()
 			       
-	return people       
+	return (hug.input_format.json(people)
 
+
+
+@hug.default_input_format("application/json")
 @hug.post('/add/{n}/{l}/{a}')
 def add_person(n:str,l:str,a:str):
     global people
     people.append({'Name':n,'Last_Name':l,'Age':a})
     save_in_json()
 
-    return people        
+    return (hug.input_format.json(people)        
 
 
 
@@ -71,8 +83,9 @@ def get_people():
     global people
     return people
 
-@hug.get('/people/{Person_id}')
 
+@hug.default_input_format("application/json")
+@hug.get('/people/{Person_id}')
 def find_person(Person_id:int):
 
 	for idx, Person in enumerate(people):
