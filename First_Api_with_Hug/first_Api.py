@@ -1,9 +1,15 @@
 import hug 
 import json
 from pathlib import Path
+from configparser import ConfigParser
+
+parser = ConfigParser()
+parser.read('../settings.ini')
 
 
+authentication=parser.get('registry', 'authentication')
 
+ 
 my_file = Path("People.json")
 
 people = []
