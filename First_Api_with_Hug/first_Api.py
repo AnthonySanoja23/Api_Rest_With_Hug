@@ -55,10 +55,7 @@ def delete_people(Person_id:int):
 
 @hug.default_input_format("application/json")
 @hug.put('/update/{Person_id}/{n}/{l}/{a}')
-def suma():
-	return print("Holaaaa ")
-
-def update_people(Person_id,n,l,a):
+def update_people(Person_id:int,n,l,a):
 	global people
 
 	if len(people) - 1 >= Person_id:
