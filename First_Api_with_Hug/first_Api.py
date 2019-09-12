@@ -48,14 +48,17 @@ def delete_people(Person_id:int):
 			save_in_json() 
 			break
  
-	return (hug.input_format.json(people)
+	return (hug.input_format.json(people))
 
 
 
 
 @hug.default_input_format("application/json")
 @hug.put('/update/{Person_id}/{n}/{l}/{a}')
-def update_people(Person_id:int,n,l,a):
+def suma():
+	return print("Holaaaa ")
+
+def update_people(Person_id,n,l,a):
 	global people
 
 	if len(people) - 1 >= Person_id:
@@ -63,7 +66,7 @@ def update_people(Person_id:int,n,l,a):
 		people[Person_id] = {'Name':n,'Last_Name':l,'Age':a}
 		save_in_json()
 			       
-	return (hug.input_format.json(people)
+	return (hug.input_format.json(people))
 
 
 
@@ -74,7 +77,7 @@ def add_person(n:str,l:str,a:str):
     people.append({'Name':n,'Last_Name':l,'Age':a})
     save_in_json()
 
-    return (hug.input_format.json(people)        
+    return (hug.input_format.json(people))        
 
 
 
