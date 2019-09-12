@@ -44,7 +44,7 @@ def delete_people(Person_id:int):
 
 	for idx, Person in enumerate(people):
 		if idx == Person_id:
-			del people[idx]
+			del Person[idx]
 			save_in_json() 
 			break
  
@@ -91,8 +91,7 @@ def find_person(Person_id:int):
 	for idx, Person in enumerate(people):
 		if idx == Person_id:
 			return Person
-			 
-			break
+			
   
 
 # Authentication http     
