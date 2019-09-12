@@ -44,11 +44,11 @@ def delete_people(Person_id:int):
 
 	for idx, Person in enumerate(people):
 		if idx == Person_id:
-			del Person[idx]
+			del people[idx]
 			save_in_json() 
 			break
  
-	return (hug.input_format.json(people))
+	return (people)
 
 
 
@@ -63,18 +63,18 @@ def update_people(Person_id:int,n,l,a):
 		people[Person_id] = {'Name':n,'Last_Name':l,'Age':a}
 		save_in_json()
 			       
-	return (hug.input_format.json(people))
+	return people
 
 
 
 @hug.default_input_format("application/json")
 @hug.post('/add/{n}/{l}/{a}')
-def add_person(n:str,l:str,a:str):
+def add_person(n,l,a):
     global people
     people.append({'Name':n,'Last_Name':l,'Age':a})
     save_in_json()
 
-    return (hug.input_format.json(people))        
+    return (people)        
 
 
 
