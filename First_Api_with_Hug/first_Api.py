@@ -2,6 +2,8 @@ import hug
 import json
 from pathlib import Path
 from configparser import ConfigParser
+from falcon import *
+
 
 parser = ConfigParser()
 parser.read('../settings.ini')
@@ -13,6 +15,7 @@ authentication=parser.get('registry', 'authentication')
 my_file = Path("People.json")
 
 people = []
+mensaje = "hola"
 
 
 
@@ -39,7 +42,7 @@ def save_in_json():
 
 @hug.default_input_format("application/json")
 @hug.delete('/delete/{Person_id}')
-def delete_people(Person_id:int):
+def delete_people(Person_id:int,response):
 	global people
 
 	for idx, Person in enumerate(people):
@@ -47,11 +50,13 @@ def delete_people(Person_id:int):
 			del people[idx]
 			save_in_json() 
 			break
- 
-	return (people)
+			return (people)
+		elif idx != Person_id:
+			response.status = falcon.HTTP_204
+			return print("La persona no existe ")
 
 
-
+	
 
 @hug.default_input_format("application/json")
 @hug.put('/update/{Person_id}/{n}/{l}/{a}')
@@ -98,6 +103,10 @@ def find_person(Person_id:int):
 @hug.get("/authentication", requires=authentication)
 def basic_auth_api_call(user: hug.directives.user):
     return "Welcome: {0}".format(user)
+
+
+
+
 
 
 
