@@ -51,7 +51,7 @@ def delete_people(Person_id:int,response):
 		elif idx != Person_id:
 			response.status == falcon.HTTP_204
 
-			return 'The client is not registered'
+			return 'The person is not registered'
 				
 			
 #Update
@@ -66,7 +66,7 @@ def update_people(Person_id:int,n,l,a):
 		save_in_json()
 
 	else:
-		return 'The client is not registered'	
+		return 'The person is not registered'	
 			       
 	return people
 
@@ -97,8 +97,10 @@ def find_person(Person_id:int):
 
 	for idx, Person in enumerate(people):
 		if idx == Person_id:
-			
+
 			return Person
+		else:
+			return 'The person is not registered'
 			
   
 
