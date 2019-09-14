@@ -15,7 +15,7 @@ authentication=parser.get('registry', 'authentication')
 my_file = Path("People.json")
 
 people = []
-mensaje = "hola"
+
 
 
 
@@ -52,8 +52,10 @@ def delete_people(Person_id:int,response):
 			break
 			return (people)
 		elif idx != Person_id:
-			response.status = falcon.HTTP_204
-			return print("La persona no existe ")
+			response.status == falcon.HTTP_204
+			return 'The client is not registered'
+				
+			
 
 
 	
