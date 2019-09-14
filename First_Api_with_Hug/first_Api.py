@@ -28,8 +28,6 @@ if my_file.exists():
 
 
 
-
-
 def save_in_json():
 
 	data = json.dumps(people)
@@ -38,8 +36,7 @@ def save_in_json():
 	f.close()
 
 
-
-
+#Delete 
 @hug.default_input_format("application/json")
 @hug.delete('/delete/{Person_id}')
 def delete_people(Person_id:int,response):
@@ -53,13 +50,11 @@ def delete_people(Person_id:int,response):
 			return (people)
 		elif idx != Person_id:
 			response.status == falcon.HTTP_204
+
 			return 'The client is not registered'
 				
 			
-
-
-	
-
+#Update
 @hug.default_input_format("application/json")
 @hug.put('/update/{Person_id}/{n}/{l}/{a}')
 def update_people(Person_id:int,n,l,a):
@@ -69,11 +64,14 @@ def update_people(Person_id:int,n,l,a):
 
 		people[Person_id] = {'Name':n,'Last_Name':l,'Age':a}
 		save_in_json()
+
+	else:
+		return 'The client is not registered'	
 			       
 	return people
 
 
-
+#Add person
 @hug.default_input_format("application/json")
 @hug.post('/add/{n}/{l}/{a}')
 def add_person(n,l,a):
@@ -81,22 +79,25 @@ def add_person(n,l,a):
     people.append({'Name':n,'Last_Name':l,'Age':a})
     save_in_json()
 
-    return (people)        
+    return people        
 
 
-
+#List people
 @hug.get('/people')
 def get_people():
     global people
+
     return people
 
 
+#Search person by id 
 @hug.default_input_format("application/json")
 @hug.get('/people/{Person_id}')
 def find_person(Person_id:int):
 
 	for idx, Person in enumerate(people):
 		if idx == Person_id:
+			
 			return Person
 			
   
