@@ -11,7 +11,7 @@ python-dateutil==2.6.1
 python-debian==0.1.32
 python-mimeparse==0.1.4
 pytz==2018.3
-reportlab==3.4.0
+reportlab==3.5.55
 requests==2.22.0
 requests-unixsocket==0.1.5
 systemd-python==234
